@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         getTasks();
         while (true) {
-            ShowOptions(OPTIONS);
+            showOptions(OPTIONS);
             String option = selectOption();
             if (!validOption(option)){
                 errorMsg(option);
@@ -31,11 +31,11 @@ public class Main {
                 break;
             }
         }
-        GetDate();
+        getDate();
         exitMsg();
 
     }
-    public static void ShowOptions(String []option ){
+    public static void showOptions(String []option ){
 
         System.out.println(BLUE+"Please select an option:"+RESET);
 
@@ -44,7 +44,7 @@ public class Main {
         }
     }
 
-    public static void GetDate (){
+    public static void getDate(){
         try (PrintWriter writer = new PrintWriter(new File(FILE_NAME))) {
             for (String[] task : tasks) {
                 String taskLine = StringUtils.join(task, ",");
@@ -70,7 +70,6 @@ public class Main {
             String[] task = taskLine.split(",");
             tasks = ArrayUtils.add(tasks, task);
         }
-        //System.out.println(PURPLE + tasks.length + " Zadania zostały odczytane" + RESET);
     }
     public static void exitMsg(){
         System.out.println(RED + "Bye, bye" + RESET);
@@ -89,9 +88,7 @@ public class Main {
                 listTasks();
                 break;
             }
-            default:
-                //System.out.println("Please select a correct option.");
-                {
+            default: {
                 break;
             }
         }
