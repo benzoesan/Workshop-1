@@ -50,7 +50,6 @@ public class Main {
                 String taskLine = StringUtils.join(task, ",");
                 writer.println(taskLine);
             }
-           // System.out.println(PURPLE + tasks.length + " Zadania zostały zapisane" + RESET);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
